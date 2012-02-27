@@ -1,0 +1,147 @@
+body {
+  padding-bottom: 40px;
+  background: url("whitey.png"); }
+
+.main {
+  margin-top: 60px; }
+
+.fullScreen #map {
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+.fullScreen .doc {
+  display: none; }
+
+/* Unfortunately we have to repeat these rules
+   as non-webkit browsers will ignore a combo including the following selector*/
+:-webkit-full-screen #map {
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+:-webkit-full-screen .doc {
+  display: none; }
+
+.navbar .navbar-inner {
+  background: #1fa9f4; }
+.navbar ul li a {
+  color: white !important;
+  display: block;
+  padding: 0 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  line-height: 79px;
+  background: -webkit-gradient(linear, left top, left bottombottom, from(#a8a8a8), to(#454545));
+  background: -moz-linear-gradient(top, #a8a8a8, #454545);
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 700ms;
+  -moz-transition-property: background;
+  -moz-transition-duration: 700ms;
+  background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(#1fa9f4), to(#001c4e));
+  background: -moz-radial-gradient(center 80px 45deg, circle cover, #1fa9f4 0%, #001c4e 100%); }
+  .navbar ul li a:hover {
+    background: -webkit-gradient(radial, 50% 100%, 10, 50% 50%, 90, from(#0b415d), to(#000a1d));
+    background: -moz-radial-gradient(center 80px 45deg, circle cover, #0b415d 0%, #000a1d 100%); }
+.navbar .btn-navbar {
+  background: #126592; }
+
+.github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 1500; }
+
+.hero-unit {
+  padding: 0;
+  background: none; }
+
+#map {
+  height: 60%;
+  position: relative; }
+
+.lookup {
+  display: none;
+  z-index: 2500;
+  position: absolute;
+  left: 31.06%;
+  top: 60%;
+  background: rgba(255, 255, 255, 0.9);
+  height: 1.3em;
+  font-size: 72px;
+  line-height: 72px;
+  color: red;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  width: 37.88%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3); }
+
+.doc {
+  margin-top: 20px; }
+
+.icons {
+  position: absolute;
+  top: 15px;
+  right: 2%;
+  z-index: 2500;
+  width: 64px;
+  text-align: center; }
+  .icons img {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    margin-bottom: 10px; }
+  .icons #fullScreen {
+    width: 38px;
+    height: 38px;
+    margin: 0 8px 24px; }
+
+.popup .wiki, .popup .wiki:visited {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px; }
+  .popup .wiki img, .popup .wiki:visited img {
+    width: 14px;
+    height: 14px; }
+.popup .citypic {
+  cursor: pointer;
+  width: 150px;
+  height: 150px; }
+.popup .location {
+  margin-top: 4px;
+  font-style: italic; }
+
+.playing img, .showing img {
+  width: 50px;
+  height: 50px;
+  float: left; }
+.playing .info, .showing .info {
+  padding-left: 70px; }
+
+input {
+  width: auto; }
+
+h1 {
+  margin-bottom: 8px; }
+
+.clearance {
+  height: 1px;
+  clear: both; }

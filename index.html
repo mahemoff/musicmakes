@@ -1,0 +1,164 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="lib/jquery-ui.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="style/app.css" />
+    <title>Music Makes The World Go Round</title>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Music Makes The World Go Round &#9835;</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Options</a></li>
+              <li><a href="#">Playing</a></li>
+              <li><a href="#">Showing</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#html5">HTML5</a></li>
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class='main container'>
+
+      <div class="hero-unit">
+        <div id='map' class='map'>
+          <div class='icons'>
+            <img id='fullScreen' src='icons/fullscreen.png' />
+            <img id='startLookup' src='icons/shadow-search.png' />
+            <img id='randomCity' src='icons/shadow-dice.png' />
+            <img id='pauseAll' src='icons/shadow-pause.png' />
+          </div>
+          <input id='lookup' class='lookup' placeholder='Where to?' tabindex='0'></input>
+        </div>
+      </div>
+
+      <div class='doc row'>
+        <div class='span4'>
+          <h1>Options</h1>
+          <form class='options'>
+            <fieldset>
+              <p>Auto-rotate delay (secs): <input size='3' maxlength='4' value='20' class='delay'></input></p>
+              <p><i>Tip: Resize map by dragging bottom and right edges.</i></p>
+            </fieldset>
+          </form>
+        </div>
+        <div id='blurb' class='span4'>
+          <h1>What's Playing?</h1>
+          <div class='playing'>Very soon now ...</div>
+          <script type='x-template' class='playingTemplate'>
+            <a href='<%= permalink_url %>' target='_blank'><img src='<%= artwork_url || 'icons/soundcloud.png' %>'></a>
+            <div class='info'>
+              <a class='track' href='<%= permalink_url %>' target='_blank'><%= title %></a><br/>
+              <span>by</span><br/>
+              <a class='artist' href='<%= user.username %>' target='_blank'><%= user.username %></a>
+            </div>
+          </script>
+        </div>
+        <div id='blurb' class='span4'>
+          <h1>What's Here?</h1>
+          <div class='showing'>
+            We'll show you nearby photos when you <a class='connectInstagram' href="#">hook up Instagram</a>. But you don't have to. But it's nice.
+          </div>
+          <script type='x-template' class='showingTemplate'>
+            <a href='<%= link %>' target='_blank'><img src='<%= images.thumbnail.url %>'></a>
+            <div class='info'>
+              <a class='image' href='<%= link %>' target='_blank'>Photo by <%= user.username %></a>
+            </div>
+          </script>
+        </div>
+
+      </div>
+
+      <div class='doc row'>
+
+        <div id='about' class='span4'>
+          <h1>About this App</h1>
+          <p>This is a demo of HTML5 Responsive Web Design...making the web app stretch to the dimensions of the screen.
+          And doing so in the context of HTML5 canvas graphics, which are used here to power the map. CSS3 is also 
+          demonstrated in the lookup.</p>
+          <p>The demo was prepared for the <a
+            href='http://www.appup.com/'>Intel AppUp's</a> presence at <a
+            href='http://www.mobileworldcongress.com/'>Mobile World
+            Congress</a>, which supports the HTML5 platform. It was primarily developed for in-person walkthroughs,
+          so it may not work perfectly for the home surfer, but we invite adventurous types to give it a whirl.
+            <p>Developers can learn more about Intel AppUp at <a href='http://appdeveloper.intel.com/'>the AppUp Developer homepage</a>.</p>
+            <p>The demo was created by <a href='http://mahemoff.com'>Michael Mahemoff</a> in February 2012.</p></li>
+        </div>
+
+        <div id='html5' class='span4'>
+          <h1>HTML5 Demonstrated</h1>
+          <ul>
+            <li>The openness and popularity of HTML5 lends itself to a broad ecosystem of reusable frameworks, libraries, and easily-consumed APIs; see Credits section.</li>
+            <li>The portability of modern HTML5 means this app works across a variety of form factors</li>
+            <li>The practice of Responsive Web Design lets us build user-interfaces for a wide range of devices; try resizing this window.</li>
+            <li>The capability of Full-Screen Mode takes Responsive Web Design to the max.</li>
+            <li>The design patterns of JavaScript architecture allow us to build scaleable systems, using techniques like Publish-Subscribe and Model-View-Controller.</li>
+            <li>The presentation features of modern HTML5 and CSS allow us to deliver rich apps rivalling native capabilities.</li>
+            <li>The language features of JavaScript allow us to deliver pure client-side apps; here, the server is responsible only for emitting static files, which then connect to third-party services.</li>
+          </ul>
+        </div>
+
+        <div id='credits' class='span4'>
+          <h1>Credits</h1>
+          <ul>
+            <li><a href='http://twitter.github.com/bootstrap/'>Twitter Bootstrap</a> provides the overall page structure and look-and-feel, including the responsive layout.</li>
+            <li><a href='http://coffeescript.org/'>CoffeeScript</a> and <a href='http://sass-lang.com/'>SASS</a> to enhance syntax.</li>
+            <li><a href='http://documentcloud.github.com/backbone/'>Backbone</a> provides the JavaScript architecture structure.</li>
+            <li><a href='https://github.com/thoughtbot/bourbon'>Bourbon</a> provides a convenient way to build "DRY" (Don't Repeat Yourself) CSS3 which is compatible across HTML5 browsers and platforms.</li>
+            <li><a href='http://jquery.org'>jQuery and jQuery UI</a> for user-interface manipulation.</li>
+            <li><a href='http://leaflet.cloudmade.com/'>Leaflet</a> provides the map user-interface, with the content powered by CloudMade.</li>
+            <li>Music via <a href='http://developers.soundcloud.com/'>SoundCloud API</a>.</li>
+            <li>Photos via <a href='http://instagram.com/developer/'>Instagram API</a>.</li>
+            <li>Further credits for Icons and backgrounds in the <a target='_blank' href='README'>README</a>.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <a href="http://github.com/mahemoff/musicmakes"><img class="github" src="icons/github.png" alt="Fork me on GitHub"></a>
+
+  </div>
+
+    <script type='x-template' class='popuptemplate'>
+      <div class='popup'>
+        <a class='wiki' target='_blank' href='http://en.wikipedia.org/wiki/<%= wikipedia %>'><%= decodeURIComponent(city) %>&nbsp;<img src='icons/wiki2.png'></a>
+        <img class='citypic' src='icons/soundcloud.png' />
+        <div class='location'><%= lat %>&deg; <%= lon %>&deg;</div>
+      </div>
+    </script>
+
+    <script src='lib/jquery.min.js'></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src='lib/underscore.js'></script>
+    <script src='lib/backbone.js'></script>
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script src="lib/cities.json"></script>
+    <script src="lib/smoothscroll.js"></script>
+    <script src="http://connect.soundcloud.com/sdk.js" type="text/JavaScript"></script>
+
+    <script src="script/util.js"></script>
+    <script src='script/lookup.js'></script>
+    <script src='script/popup.js'></script>
+    <script src='script/map.js'></script>
+    <script src="script/app.js?3"></script>
+    <script src="script/player.js"></script>
+
+  </body>
+</html>
