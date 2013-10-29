@@ -1,6 +1,8 @@
 *Update (Oct-29-2013): There's now an official mashup from SoundCloud and Instagram!*
 http://blog.soundcloud.com/2013/10/28/hear-whats-happening-soundcloud-and-instagram/
 
+<hr>
+
 A single-page web app, pure client-side. Powered by Leaflet maps,
 SoundCloud music, and Instagram photos...it lets you move between
 cities, hearing local music and viewing local pictures.
